@@ -33,7 +33,7 @@ module.exports = class QuickAlbania extends Plugin {
         },
         React.createElement('img', {
           className: `emoji ${classes.icon}`,
-          src: '/assets/e4d52f4d69d7bba67e5fd70ffe26b70d.svg'
+          src: '/assets/d2504bd52ecf3946c9bfc0ef5e797e3c.svg'
         })
       ));
       return res;
