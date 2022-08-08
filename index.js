@@ -8,7 +8,7 @@ const { findInReactTree } = require('powercord/util');
 const { inject, uninject } = require('powercord/injector');
 const { React, getModule } = require('powercord/webpack');
 
-module.exports = class QuickStar extends Plugin {
+module.exports = class QuickAlbania extends Plugin {
   async startPlugin () {
     const classes = {
       ...await getModule([ 'icon', 'isHeader' ]),
@@ -16,7 +16,7 @@ module.exports = class QuickStar extends Plugin {
     };
     const reactionManager = await getModule([ 'addReaction' ]);
     const MiniPopover = await getModule(m => m.default && m.default.displayName === 'MiniPopover');
-    inject('star-button', MiniPopover, 'default', (_, res) => {
+    inject('albania-button', MiniPopover, 'default', (_, res) => {
       const props = findInReactTree(res, r => r && r.canReact && r.message);
       if (!props || props.message.reactions.find(r => r.emoji.name === '🇦🇱' && r.me)) {
         return res;
@@ -42,6 +42,6 @@ module.exports = class QuickStar extends Plugin {
   }
 
   pluginWillUnload () {
-    uninject('star-button');
+    uninject('albania-button');
   }
 };
