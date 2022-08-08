@@ -18,7 +18,7 @@ module.exports = class QuickStar extends Plugin {
     const MiniPopover = await getModule(m => m.default && m.default.displayName === 'MiniPopover');
     inject('star-button', MiniPopover, 'default', (_, res) => {
       const props = findInReactTree(res, r => r && r.canReact && r.message);
-      if (!props || props.message.reactions.find(r => r.emoji.name === '⭐' && r.me)) {
+      if (!props || props.message.reactions.find(r => r.emoji.name === '🇦🇱' && r.me)) {
         return res;
       }
 
@@ -27,7 +27,7 @@ module.exports = class QuickStar extends Plugin {
           className: classes.button,
           onClick: () => reactionManager.addReaction(props.channel.id, props.message.id, {
             animated: false,
-            name: '⭐',
+            name: '🇦🇱',
             id: null
           })
         },
